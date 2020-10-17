@@ -4,13 +4,17 @@ import "../main.css"
 
 const Navbar = () => {
   return (
-    <div className="navbar">
-      <div className="navbar__header">
-        <i className="fab fa-soundcloud logo" />
-        MERN cloud
+    <div className="container">
+      <div className="navbar">
+        <div className="navbar left">
+          <i className="fab fa-soundcloud logo lp" />
+          <div className="navbar__header lp">MERN cloud</div>
+        </div>
+        <div className="navbar right">
+          <div className="navbar__login rp">Войти</div>
+          <div className="navbar__registration rp">Регистрация</div>
+        </div>
       </div>
-      <div className="navbar__login">Войти</div>
-      <div className="navbar__registration">Регистрация</div>
     </div>
   );
 }

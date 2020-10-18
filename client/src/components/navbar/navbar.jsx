@@ -1,5 +1,6 @@
 import React from "react"
 import "../main.css"
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min"
 //import Logo from "../../assets/navbar-logo.svg"
 
 const Navbar = () => {
@@ -11,8 +12,12 @@ const Navbar = () => {
           <div className="navbar__header lp">MERN cloud</div>
         </div>
         <div className="navbar right">
-          <div className="navbar__login rp">Войти</div>
-          <div className="navbar__registration rp">Регистрация</div>
+          <div className="navbar__login rp">
+            <NavLink to="/login">Войти</NavLink>
+          </div>
+          <div className="navbar__registration rp">
+            <NavLink to="/registration">Регистрация</NavLink>
+          </div>
         </div>
       </div>
     </div>

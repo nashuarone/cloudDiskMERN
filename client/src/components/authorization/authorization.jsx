@@ -1,15 +1,15 @@
 import React, { useState } from "react"
 import Input from "../../utils/input/input"
 import "../main.css"
+import { registration } from "../../actions/user"
 
 function Registration() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-
   return (
-    <div className="registration">
-      <div className="registration__header">Регистрация</div>
+    <div className="authorization">
+      <div className="authorization__header">Регистрация</div>
       <Input
         value={email}
         setValue={setEmail}
@@ -22,7 +22,12 @@ function Registration() {
         type="password"
         placeholder="Введите пароль..."
       />
-      <button className="registration__btn">Войти</button>
+      <button
+        className="authorization__btn"
+        onClick={() => registration(email, password)}
+      >
+        Зарегистрироваться
+      </button>
     </div>
   );
 }

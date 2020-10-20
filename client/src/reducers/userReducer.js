@@ -1,4 +1,5 @@
 const SET_USER = "SET_USER";
+const LOGOUT = "LOGOUT";
 
 const initialState = {
   currentUser: {},
@@ -11,11 +12,19 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         currentUser: action.payload.user,
-        isAuth: true
-      }
+        isAuth: true,
+      };
+    case LOGOUT:
+      localStorage.removeItem('token')
+      return {
+        ...state,
+        currentUser: {},
+        isAuth: false,
+      };
     default:
-      return state
+      return state;
   }
 }
 
 export const setUser = user => ({type: SET_USER, payload: user})
+export const logout = () => ({ type: LOGOUT });

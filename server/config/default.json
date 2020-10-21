@@ -1,5 +1,6 @@
 {
   "serverPort" : 5000,
   "dbUrl" : "mongodb+srv://nashuar:3765146918r@cloudmern.pzh6j.mongodb.net/CloudMERN?retryWrites=true&w=majority",
-  "secretKey" : "mern-secret-key"
+  "secretKey" : "mern-secret-key",
+  "filePath" : "C:\\User\\Skela\\Documents\\dev\\MERN\\server\\files"
 }

@@ -3,8 +3,8 @@ const config = require('config')
 const File = require('../models/File')
 
 class FileService {
-  createDir(file) {
-    const filePath = `${config.get('filePath')}\\${file.user}\\${file.path}`
+  createDir(req, file) {
+    const filePath = this.getPath(req, file)
     return new Promise(((resolve, reject) => {
       try {
         if (!fs.existsSync(filePath)) {
@@ -18,6 +18,11 @@ class FileService {
       }
     }))
   }
+
+  getPath(req, file) {
+    return req.filePath + '\\' + file.user + '\\' + file.path
+  }
+
 }
 
 module.exports = new FileService()

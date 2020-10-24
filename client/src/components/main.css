@@ -94,3 +94,62 @@
   margin: 5px 20px 0 0;
   font-weight: bold;
 }
+
+.disk {
+  margin-top: 20px;
+}
+
+.disk__create {
+  margin-left: 10px;
+}
+
+.filelist {
+  margin: 20px 0;
+  width: 1170px;
+}
+
+.filelist__header {
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+}
+
+.filelist__name {
+  grid-column-start: 2;
+}
+
+.filelist__date {
+  grid-column-start: 5;
+  justify-self: center;
+}
+
+.filelist__size {
+  grid-column-start: 6;
+  justify-self: center;
+}
+
+.file {
+  margin: 10px 0;
+  border-bottom: solid 2px gray;
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  align-items: center;
+}
+
+.file:hover {
+  transform: scale(1.01);
+  transition-duration: 0.2s;
+}
+
+.file__date {
+  grid-column-start: 5;
+  justify-self: center;
+}
+
+.file__size {
+  grid-column-start: 6;
+  justify-self: center;
+}
+
+.file__img {
+  justify-self: center;
+}

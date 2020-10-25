@@ -1,8 +1,18 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentDir, pushToStack } from "../../../../reducers/fileReducer";
 
 const File = ({file}) => {
+  const dispatch = useDispatch()
+  const currentDir = useSelector(s => s.files.currentDir)
+
+  function openDirHandler() {
+    dispatch(pushToStack(currentDir))
+    dispatch(setCurrentDir(file._id))
+  }
+
   return (
-    <div className="file">
+    <div className="file" onClick={file.type === 'dir' ? () => openDirHandler() : ''} >
       <i
         className={
           file.type === "dir"

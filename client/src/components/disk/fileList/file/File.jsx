@@ -1,6 +1,6 @@
 import React from "react";
 
-function File({file}) {
+const File = ({file}) => {
   return (
     <div className="file">
       <i

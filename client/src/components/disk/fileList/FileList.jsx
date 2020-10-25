@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import File from './file/File'
 
-function FileList() {
+const FileList = () => {
   const files = useSelector(s => s.files.files).map(file => <File file={file} key={file.id} />)
 
 

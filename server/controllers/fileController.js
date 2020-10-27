@@ -51,9 +51,9 @@ class FileController {
 
       let path
       if (parent) {
-        path = `${config.get('filePath')}/${user._id}/${parent.path}/${file.name}`
+        path = req.filePath + `/${user._id}/${parent.path}/${file.name}`
       } else {
-        path = `${config.get('filePath')}/${user._id}/${file.name}`
+        path = req.filePath + `/${user._id}/${file.name}`
       }
 
       if (fs.existsSync(path)) {
@@ -65,8 +65,8 @@ class FileController {
         name: file.name,
         type,
         size: file.size,
-        path: parent?.path,
-        parent: parent?._id,
+        path: parent ? parent.path : file.path,
+        parent: parent ? parent._id : user._id,
         user: user._id
       })
 
